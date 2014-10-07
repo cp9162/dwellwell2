@@ -11,6 +11,7 @@ class HousesController < ApplicationController
   # GET /houses/1.json
   def show
     @house = House.find(params[:id])
+    @user = User.find(current_user)
   end
 
   # GET /houses/new
@@ -70,6 +71,6 @@ class HousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
-      params.require(:house).permit(:name, :address, :city, :state, :unit, :zip)
+      params.require(:house).permit(:name, :address, :city, :state, :unit, :zip, :house_key)
     end
 end
