@@ -1,23 +1,38 @@
 body{
-	background: url(dc_photo.jpg);
-	background-size: cover;
+	background-color: rgb(66, 206, 206);
 	color: white;
 }
-.hm-title{
-	font-size: 8em;
-	color: white;
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 100;
-}
+
 .hm-text{
 	text-align: left;
-	// margin-left: 18em;
+	margin-left: 2em;
+	margin-top: -1.5em;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 100;
-	text-align: center;
+	text-align: left;
+	font-size: 300%;
+	float:left;
+	width: 55%;
+	padding:2em;
 }
 
 a:visited {
 	color: white;
 }
+
+
+@media (max-width:500px) {
+ .hm-text {
+ 	font-size: 100%;
+ }
+
+}
+
+img {
+	float: right;
+	width:35%;
+	margin-top: -3em;
+	padding-right: 3em;
+}
+
+
