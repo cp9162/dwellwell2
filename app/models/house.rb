@@ -11,5 +11,5 @@ class House
 
   # embeds_many :chores
   # embeds_many :bills
-
+  has_many :users
 end
