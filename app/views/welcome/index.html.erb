@@ -1,9 +1,19 @@
+<nav>
+  <div class="login">
+    <% if user_signed_in? %>
+      Signed in as <%= current_user.email %> | Not you? <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "sign in", new_user_session_path, :rel => 'facebox' %>
+    <% end %>
+  </div>
+</nav>
+
 <div>
   <div class="hm-bg">
-  <h1 class="hm-title">dwellWell</h1>
-  <p class="hm-text">lorem</p>
+  <h1 class="hm-title">dwellwell</h1>
+  <p class="hm-text">dwellwell is an app that allows roommates to divide chores, caclulate and split bills, and enjoy social living!  And - it's FREE!!</p>
   </div>
-  <div class="features">
+<!--   <div class="features">
   <p>lorem</p>
   <li>add houses</li>
   <li>divide chores</li>
@@ -12,5 +22,5 @@
   </div>
   <div class="pricing">
   FREE!!!!!
-  </div>
+  </div> -->
 </div>

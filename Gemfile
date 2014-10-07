@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'foundation-rails'
 gem 'devise'
 gem "mongoid", "~> 4.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
