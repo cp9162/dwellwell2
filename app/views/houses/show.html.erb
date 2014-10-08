@@ -1,8 +1,18 @@
-<p id="notice"><%= notice %></p>
-<%= @user.id %>
-<%= @user.house_key %>
-<%= @user.email %>
+<style>
+body {
+	font-family: 'Raleway', sans-serif;
+	padding: 1em;
+	font-size: 130%;
+}
 
-<%= link_to 'Create Chore', remote: true %> 
-<%= link_to 'Edit', edit_house_path(@house) %> 
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+</style>
+
+
+<p id="notice"><%= notice %></p>
+<%= @user.id %></br>
+<%= @user.house_key %></br>
+<%= @user.email %></br>
+
+<%= link_to 'Create Chore', remote: true %> </br>
+<%= link_to 'Edit', edit_house_path(@house), :rel => 'facebox' %> </br>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %></br>
