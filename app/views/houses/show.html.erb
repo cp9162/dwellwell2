@@ -3,5 +3,6 @@
 <%= @user.house_key %>
 <%= @user.email %>
 
-<%= link_to 'Edit', edit_house_path(@house) %> |
+<%= link_to 'Create Chore', remote: true %> 
+<%= link_to 'Edit', edit_house_path(@house) %> 
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
