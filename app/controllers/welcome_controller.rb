@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 	def index
-		if current_user
+		if current_user.house_key != nil
 			redirect_to ('/houses/' + current_user.house_key)
 		end
 	end
