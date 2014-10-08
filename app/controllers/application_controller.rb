@@ -4,15 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
  
   def after_sign_in_path_for(source)
-  	if (current_user.house_key == nil)
+    if (current_user.house_key == nil)
       return request.env['omniauth.origin'] || stored_location_for(resource) || houses_path
-  		else
+      else
         return request.env['omniauth.origin'] || house_path(current_user['house_key'])
-  	end
+    end
   end 
   
   def after_sign_up_path_for(source)
-  	redirect houses_path
- 	end
+    redirect houses_path
+  end
 
 end
