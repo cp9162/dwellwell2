@@ -1,0 +1,24 @@
+<%= form_for(@chores) do |f| %>
+ 
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title%><br />
+  </div>
+  <div class="field">
+    <%= f.label :is_done %><br />
+    <%= f.boolean :is_done %><br />
+  </div>
+  <div class="field">
+    <%= f.label :assignment %><br />
+    <%= f.text_field :assignment %><br />
+  </div>
+  <div class="field">
+    <%= f.label :completed_on %><br />
+    <%= f.datetime :city %><br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
