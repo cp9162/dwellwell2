@@ -9,7 +9,7 @@ class House
 
   # add validations
 
-  # embeds_many :chores
+  embeds_many :chores
   # embeds_many :bills
   has_many :users
 end

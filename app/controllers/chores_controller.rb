@@ -26,13 +26,20 @@ end
 
   # POST /houses
   # POST /houses.json
+#   def create
+#   @house = House.find(params[:house_id])
+#   @chore = @house.chores.create!(params[:house])
+#   redirect_to @house, :notice => "Chore created!"
+# end
   def create
-    @chore = Chore.new(chore_params)
-
+    @house = House.find(params[:house_id])
+    title = chore_params[:title]
+    @chore = @house.chores.create!(title: title)
+  
     respond_to do |format|
-      if @chore.save
-        format.html { redirect_to @chore, notice: 'chore was successfully created.' }
-        format.json { render :show, status: :created, location: @chore }
+      if @house.save
+        format.html { redirect_to @house, notice: 'chore was successfully created.' }
+        format.json { render :show, status: :created, location: @house }
       else
         format.html { render :new }
         format.json { render json: @chore.errors, status: :unprocessable_entity }
@@ -72,7 +79,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chore_params
-      params.require(:chore).permit(:title, :is_dont, :city, :assigment)
+      params.require(:chore).permit(:title)
     end
 end
 
