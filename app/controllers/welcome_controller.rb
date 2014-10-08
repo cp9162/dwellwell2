@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 	def index
-		if signed_in?
-			redirect('/houses/'+ current_user['house_key'])
+		if current_user
+			redirect_to ('/houses/' + current_user.house_key)
 		end
 	end
 end
