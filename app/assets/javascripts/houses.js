@@ -15,11 +15,11 @@ jQuery(document).ready(function($) {
   	}
   });
 
-	// $(".delete_chore").on('click', function (event) {
-	// 	event.preventDefault();
-	// 	var parent = $(this).parent();	
-	// 	parent.remove();
-	// });
+	$(".delete_chore").on('click', function (event) {
+		event.preventDefault();
+		var parent = $(this).parent();	
+		parent.remove();
+	});
 
 })
 
