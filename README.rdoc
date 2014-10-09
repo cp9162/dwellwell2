@@ -1,28 +1,32 @@
-== README
+DwellWell - DwellWell is an app built on ruby on rails with mongoDB using Object-Document-Mapper (ODM) mongoid for roommates to track chores.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.1.2p95
+* Rails version 4.1.6
+* Mongo DB version 2.6
 
-Things you may want to cover:
+#Gems installed
+* Devise version 3.4.0
+- Devise is a flexible authentication solution for Rails
 
-* Ruby version
+* Foundation-rails version 5.4.5.0
+- Is a gem to make it super easy to use Foundation in your Rails project
 
-* System dependencies
+* Mongoid version 4.0.0
+- Mongoid is an ODM (Object Document Mapper) Framework for MongoDB
 
-* Configuration
+#Database installation
+* Database creation on ruby on rails follow the instruction posed here: http://docs.mongodb.org/ecosystem/tutorial/getting-started-with-ruby-on-rails-3/
 
-* Database creation
+#User stories
+* User should be able to sign in and sign out 
+* User should be able to create house
+* User should be able to invite others to the house
+* User should be able to create a chore or list of chores
+* User should be able to mark chore(s) complete
+* User shoule be able to assign chore to a roommate or rommmates
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+#User stories (iceboxed)
+* User should be able to add a bill or add list of bills
+* User should be able to mark bill(s) paid
+* User should be reminded when bill due date is
+* User should be able to setup recurring bills
