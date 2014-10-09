@@ -1,3 +1,5 @@
+
+<div class="chore-box">
 <p id="notice"><%= notice %></p>
 
 <h2>Chores:</h2>
@@ -19,8 +21,5 @@
 <%= link_to 'New Chore', new_chore_path(@house), :rel => 'facebox', :class => 'button' %> 
 <%#= link_to '<button type="button">Edit</button>'.html_safe, edit_house_path(@house), :rel => 'facebox' %>
 
-<!-- House.chores.where(_id: current_user).find()
+</div>
 
-@house = House.where('chores_id' => @chore_id).first
-@house_id = @house.id
-User.where(house_key: @house_id).find(:name) -->
