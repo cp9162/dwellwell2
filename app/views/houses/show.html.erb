@@ -5,8 +5,11 @@
 <% if @house.chores.size > 0 %>
   <% for chore in @house.chores %>
     <h3 chore-id="<%= chore.id %>" class="<%= chore.is_done ? "done" : '' %>">
-    	<%= chore.title %>
     	<%= check_box_tag :is_done, 'yes', chore.is_done %>
+    	<%= chore.title %> :
+    	<%= @roommates.each do |r| %>
+    		<% r.read_attribute(:email) %>
+    	<% end %>
     	<span>&times;</span>
   </h3>
   <% end %>
@@ -15,3 +18,9 @@
 
 <%= link_to 'New Chore', new_chore_path(@house), :rel => 'facebox', :class => 'button' %> 
 <%#= link_to '<button type="button">Edit</button>'.html_safe, edit_house_path(@house), :rel => 'facebox' %>
+
+<!-- House.chores.where(_id: current_user).find()
+
+@house = House.where('chores_id' => @chore_id).first
+@house_id = @house.id
+User.where(house_key: @house_id).find(:name) -->
