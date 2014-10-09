@@ -15,4 +15,8 @@
  *= require foundation_and_overrides
 
  */
- 
+ @import 'foundation_and_overrides.scss';
+ @import 'welcome.css.scss';
+ @import 'global.css.scss'; 
+ @import 'facebox.css';
+ @import 'houses.css.scss';
