@@ -8,6 +8,7 @@ class User
   ## mongo db devise error fix
   include ZeroOidFix
   ## Database authenticatable
+  field :name, type: String
   field :house_key, type: String
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""

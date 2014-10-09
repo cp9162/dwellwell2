@@ -11,7 +11,7 @@ end
 def show
 	@chore = Chore.find(params[:id])
 	@user = User.find(current_user)
-	@user.set(chore_key: @chore.id)
+	@user.set(chore_key: @chore.id).find(['email'])
 end
 
   # GET /houses/new
