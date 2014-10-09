@@ -11,6 +11,9 @@
 	
 
 <nav class="main-nav">
+  <div id="logo">
+  <%= image_tag "toplogo.svg" %>
+  </div>
   <div class="login">
     <% if user_signed_in? %>
       Signed in as <%= current_user.email %> | Not you? <%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete %>
@@ -20,7 +23,9 @@
   </div>
 </nav>
 
+<div class='container'>
 <%= yield %>
+</div>
 
 
 </body>

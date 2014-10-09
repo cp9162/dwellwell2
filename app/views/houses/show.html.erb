@@ -4,11 +4,12 @@
 <h3><%= @house.chores.size %></h3>
 <% if @house.chores.size > 0 %>
   <% for chore in @house.chores %>
-    <h3><%= chore.title %></h3>
+    <h3 chore-id="<%= chore.id %>" class="<%= chore.is_done ? "done" : '' %>"><%= chore.title %></h3>
+    <%= check_box_tag :is_done, 'yes', chore.is_done %>
+    <span>&times;</span>
   <% end %>
 <% end %>
 
 
 <%= link_to 'New Chore', new_chore_path(@house), :rel => 'facebox', :class => 'button' %> 
-<%#= link_to '<button type="button">Edit</button>'.html_safe, edit_house_path(@house), :rel => 'facebox' %> 
-
+<%#= link_to '<button type="button">Edit</button>'.html_safe, edit_house_path(@house), :rel => 'facebox' %>

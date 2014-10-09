@@ -67,6 +67,7 @@
  */
 (function($) {
   $( ".login").hide();
+  $(".main-nav").hide();
   $.facebox = function(data, klass) {
     $.facebox.loading(data.settings || [])
 
@@ -308,6 +309,7 @@
       $('#facebox .loading').remove()
       $(document).trigger('afterClose.facebox')
        $( ".login").show();
+       $(".main-nav").show();
     })
     hideOverlay()
   })
