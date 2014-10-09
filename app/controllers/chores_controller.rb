@@ -64,12 +64,22 @@ end
   # DELETE /chores/1
   # DELETE /chores/1.json
   def destroy
-    @chore.destroy
-    respond_to do |format|
+    @chore = Chore.find(params[:id])
+    if @chore.destroy
       format.html { redirect_to chores_url, notice: 'Chore was successfully destroyed.' }
       format.json { head :no_content }
+    else
+      render status: 400, nothing: true
     end
   end
+
+    @todo = Todo.find(params[:id])
+
+    if @todo.destroy
+      render json: {}
+    else
+      render status: 400, nothing: true
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.
