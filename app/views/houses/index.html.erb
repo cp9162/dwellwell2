@@ -3,17 +3,22 @@
 <h1>Listing houses</h1>
 
 <section>
- 
+ 	
+ 	<h2>Search for your house:</h2>
+  <%= form_for houses_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
-  <div>
-    <% @houses.each do |house| %>
-      
-        <%= link_to 'Show', house %> | 
-        <%= link_to 'Edit', edit_house_path(house), :rel => 'facebox' %> |
-        <%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %>
-     
+  <ul>
+  <% for house in @houses %>  
+    <li>
+      <%= link_to house.name, houses_path(house) %>
+    </li>
     <% end %>
-  </div>
+  </ul>
 </section>
 
 <br>
