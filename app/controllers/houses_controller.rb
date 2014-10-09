@@ -14,7 +14,7 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     @user = User.find(current_user)
     @user.set(house_key: @house.id)
-    @roommates = User.where(house_key: @house_id)
+    @roommates = User.where(house_key: @house.id)
   end
 
   # GET /houses/new

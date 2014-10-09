@@ -7,9 +7,9 @@
     <h3 chore-id="<%= chore.id %>" class="<%= chore.is_done ? "done" : '' %>">
     	<%= check_box_tag :is_done, 'yes', chore.is_done %>
     	<%= chore.title %> :
-    	<%= @roommates.each do |r| %>
-    		<% r.read_attribute(:email) %>
-    	<% end %>
+    	<% for roommates in @roommates %>
+				<%= roommates['email'] %>
+			<% end %>
     	<span>&times;</span>
   </h3>
   <% end %>
