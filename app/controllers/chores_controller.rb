@@ -32,7 +32,7 @@ end
 #   redirect_to @house, :notice => "Chore created!"
 # end
   def create
-    @house = House.find(params[:house_id])
+    @house = House.where('chores_id' => @chore_id).first
     title = chore_params[:title]
     @chore = @house.chores.create!(title: title)
   
