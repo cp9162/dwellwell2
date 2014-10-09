@@ -15,15 +15,11 @@ jQuery(document).ready(function($) {
   	}
   });
 
-	$("span").on('click', function(){
-		var parent = $(this).parent();	
-
-		$.ajax({
-	    url: '/chores/' + parent.attr("chore-id"),
-	    type: 'DELETE',
-	    success: function(result) { parent.remove(); }
-		});
-	});
+	// $(".delete_chore").on('click', function (event) {
+	// 	event.preventDefault();
+	// 	var parent = $(this).parent();	
+	// 	parent.remove();
+	// });
 
 })
 

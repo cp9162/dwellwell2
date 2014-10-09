@@ -8,11 +8,12 @@
   <% for chore in @house.chores %>
     <h3 chore-id="<%= chore.id %>" class="<%= chore.is_done ? "done" : '' %>">
     	<%= check_box_tag :is_done, 'yes', chore.is_done %>
+    	<%= chore.id %>
     	<%= chore.title %> :
     	<% for roommates in @roommates %>
 				<%= roommates['email'] %>
 			<% end %>
-    	<span>&times;</span>
+			<%= link_to 'x', 'http://localhost:3000/chores/' + chore.id, method: 'delete', remote: true, :class => 'delete_chore' %>
   </h3>
   <% end %>
 <% end %>
