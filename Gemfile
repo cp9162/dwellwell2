@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rails_12factor'
 gem 'foundation-rails'
 gem 'devise'
 gem "mongoid", "~> 4.0.0"
