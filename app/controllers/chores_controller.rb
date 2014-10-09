@@ -73,14 +73,6 @@ end
     end
   end
 
-    @todo = Todo.find(params[:id])
-
-    if @todo.destroy
-      render json: {}
-    else
-      render status: 400, nothing: true
-    end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chore
