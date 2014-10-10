@@ -8,9 +8,11 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :house_key
+    devise_parameter_sanitizer.for(:account_update) << :house_key
   end
 
-  protect_from_forgery with: :exception
+   protect_from_forgery with: :exception
  
   def after_sign_in_path_for(source)
     if (current_user.house_key == nil)
