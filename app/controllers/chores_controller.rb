@@ -65,7 +65,7 @@ end
   # DELETE /chores/1.json
   def destroy
     @house = House.where('chore_id' => @chore_id).first
-    @chore = @house.chores.find("54371f7c45726957ac4c0000")
+    @chore = @house.chores.where(id: params[:id]).first
     respond_to do |format|
       if @chore.delete
         redirect_to root_path, notice: 'Chore was successfully destroyed.'
