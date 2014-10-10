@@ -34,7 +34,8 @@ end
   def create
     @house = House.where('chores_id' => @chore_id).first
     title = chore_params[:title]
-    @chore = @house.chores.create!(title: title)
+    assignment = chore_params[:assignment]
+    @chore = @house.chores.create!(title: title, assignment: assignment)
   
     respond_to do |format|
       if @house.save
@@ -82,7 +83,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chore_params
-      params.require(:chore).permit(:title)
+      params.require(:chore).permit(:title, :assignment)
     end
 end
 

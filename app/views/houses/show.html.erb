@@ -8,9 +8,13 @@
     <h3 chore-id="<%= chore.id %>" class="<%= chore.is_done ? "done" : '' %>">
     	<%= check_box_tag :is_done, 'yes', chore.is_done %>
     	<%= chore.title %> :
-    	<% for roommate in @roommates %>
-				<%= roommate['name'] %>
-			<% end %>
+    	<%# for roommate in @roommates %>
+				<%#= roommate['name'] %>
+			<%# end %>
+			<%# @roommates.each do |roommate| %>
+				<%#= roommate.name %>
+			<%# end %>
+			<%= chore.assignment %>
 			<%= link_to 'x', 'http://localhost:3000/chores/' + chore.id, method: 'delete', remote: true, :class => 'delete_chore' %>
   </h3>
   <% end %>
