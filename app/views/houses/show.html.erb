@@ -6,7 +6,7 @@
 <% if @house.chores.size > 0 %>
   <% for chore in @house.chores %>
     <h3 chore-id="<%= chore.id %>" class="<%= chore.is_done ? "done" : '' %>">
-    	<%= check_box_tag :is_done, 'yes', chore.is_done %>
+    	
     	<%= chore.title %> :
     	<%# for roommate in @roommates %>
 				<%#= roommate['name'] %>
